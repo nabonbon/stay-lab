@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: stay-lab
+  datasource:
+    # 기본은 H2 메모리 DB: 설치 없이 바로 실행된다. MySQL은 mysql 프로필로 실행
+    url: jdbc:h2:mem:staylab;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password:
+  jpa:
+    open-in-view: false # 트랜잭션이 끝나면 DB 커넥션을 반환한다. 컨트롤러에서 LAZY 조회가 몰래 일어나는 것도 막는다
+    hibernate:
+      ddl-auto: create # 학습용: 시작할 때마다 엔티티 기준으로 테이블을 새로 만든다 (운영은 none + Flyway)
+    defer-datasource-initialization: true # 테이블 생성 후 data.sql 실행
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 100
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    org.hibernate.SQL: debug # JPA가 만든 SQL을 항상 눈으로 확인한다
+    org.hibernate.orm.jdbc.bind: trace # ? 에 바인딩된 값
+
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/staylab?serverTimezone=Asia/Seoul
+    username: staylab
+    password: staylab

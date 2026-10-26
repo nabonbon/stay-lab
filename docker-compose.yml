@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: staylab-mysql
+    environment:
+      MYSQL_DATABASE: staylab
+      MYSQL_USER: staylab
+      MYSQL_PASSWORD: staylab
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci
