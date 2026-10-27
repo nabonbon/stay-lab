@@ -14,9 +14,9 @@ Java 21 · Spring Boot 3.5 · Spring Data JPA (Hibernate) · H2 / MySQL 8.4 · J
 | 1 | 도메인 설계(ERD), JPA 엔티티, 예약 API | 완료 |
 | 2 | Testcontainers(MySQL) 테스트, 동시 예약 테스트로 오버부킹 재현, [직접 실습: 대기자 신청](docs/exercises/week2-waitlist/README.md) | 진행 중 |
 | 3 | 락 전략 4종 비교: JVM 락 / DB 비관적 락 / 유니크 제약 / Redis 분산 락 | 예정 |
-| 4 | Docker · GitHub Actions 배포, k6 부하 테스트, Grafana | 예정 |
+| 4 | React 화면 3개(잔여 캘린더, 예약 폼, 내 예약 조회), Docker · nginx · GitHub Actions 배포, k6 부하 테스트, Grafana | 예정 |
 | 5 | Outbox 패턴으로 알림 발송 재시도, 결과 정리 | 예정 |
-| 6 | 페이지 임베드형 AI 채팅 위젯 (Claude API, 잔여 객실 조회 도구) | 예정 |
+| 6 | 페이지 임베드형 AI 채팅 위젯 (Claude API): 채팅으로 예약 폼 자동 입력, 잔여 객실 문의와 대안 안내 | 예정 |
 
 ## 실행
 
